@@ -17,6 +17,8 @@ class ContentScript {
   }
 
   constructor () {
+    chrome.runtime.sendMessage({ type: 'content_script_loaded' })
+
     this.setupListeners()
   }
 
@@ -25,9 +27,13 @@ class ContentScript {
   }
 
   handleChromeRuntimeMessages (request, sender, sendResponse) {
-    if (request.type !== 'page_data_for_popup') return
+    if (request.type === 'does_content_script_exist') {
+      sendResponse({ success: true })
+    }
 
-    this.sendPageDataForPopup(sendResponse)
+    if (request.type === 'page_data_for_popup') {
+      this.sendPageDataForPopup(sendResponse)
+    }
     return true
   }
 
