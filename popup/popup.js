@@ -19,12 +19,12 @@ class Popup {
   }
 
   setupListeners  () {
-    window.addEventListener("message", this.handleMessage.bind(this))
+    window.addEventListener('message', this.handleMessage.bind(this))
     document.addEventListener('DOMContentLoaded', this.handleDomReady.bind(this))
   }
 
   handleMessage (event) {
-    if (event.origin !== "https://platform.harvestapp.com") return
+    if (event.origin !== 'https://platform.harvestapp.com') return
 
     this.handleHarvestMessage(event)
   }
@@ -37,7 +37,7 @@ class Popup {
 
   handleDomReady () {
     chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-      chrome.tabs.sendMessage(tabs[0].id, { type:"page-data-for-popup" }, this.handleResponseFromTab.bind(this))
+      chrome.tabs.sendMessage(tabs[0]?.id, { type: 'page_data_for_popup' }, this.handleResponseFromTab.bind(this))
     })
   }
 

@@ -25,7 +25,7 @@ class ContentScript {
   }
 
   handleChromeRuntimeMessages (request, sender, sendResponse) {
-    if (request.type !== 'page-data-for-popup') return
+    if (request.type !== 'page_data_for_popup') return
 
     this.sendPageDataForPopup(sendResponse)
     return true

@@ -21,7 +21,7 @@
       ],
       "js": [
         "content-scripts/config.js",
-        "content-scripts/content-script.js"
+        "content-scripts/assets/js/content-script.js"
       ]
     }
   ]
