@@ -74,7 +74,7 @@ class ContentScript {
   }
 
   get pageTitle () {
-    return document.querySelector('title')?.textContent || ''
+    return document?.title || ''
   }
 
   get groupId () {
