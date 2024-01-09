@@ -70,3 +70,5 @@ window.BAO.HarvestExtension = {
   ]
 }
 ```
+
+[Time Tracking in Harvest Company Policy](https://3.basecamp.com/3940865/buckets/6414578/messages/5005793582)
