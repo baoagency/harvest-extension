@@ -30,7 +30,7 @@ window.BAO.HarvestExtension = {
       hostname: 'asana.com',
       selectors: {
         task_title: [
-          '.TitleInput-objectName',
+          '.TitleInput-objectName [aria-label="Task Name"]',
         ],
         group_name: [
           'meta[name="shard_id"]'
