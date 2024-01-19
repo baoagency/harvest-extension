@@ -8,7 +8,7 @@
 <img width="571" alt="image" src="https://github.com/baoagency/harvest-extension/assets/20971511/523e882d-dce2-434f-9cd5-17989d6ff19f">
 
 ## Installation
-
+- Either download a ZIP of the repo or checkout and pull the repository to your machine.
 - Navigate to the [extensions page](chrome://extensions/) `(chrome://extensions/)` in Google Chrome
 - Turn on "Developer mode". (Toggle in top right corner)
 - Click on "Load Unpacked" and select the folder on your machine containing the extension's code
