@@ -1,9 +1,15 @@
+function handleise (string) {
+  if(!string) return ''
+
+  return string?.toLowerCase()?.replace(/[^a-z0-9]+/g, '-')?.replace(/-$/, '')?.replace(/^-/, '')?.trim()
+}
+
 class Popup {
   constructor () {
     this.parameters = new URLSearchParams(
       {
         app_name: 'BAO - Harvest Extension',
-        external_item_id: 1,
+        external_item_id: '',
         external_item_name: '',
         external_group_id: '',
         external_group_name: '',
@@ -64,6 +70,7 @@ class Popup {
   }
 
   handleResponseFromTab (response) {
+    this.parameters.set('external_item_id', handleise(response?.permalink || response?.title || 1))
     this.parameters.set('external_item_name', response?.title || '')
     this.parameters.set('external_group_id', response?.group_id || '')
     this.parameters.set('external_group_name', response?.group_name || '')
