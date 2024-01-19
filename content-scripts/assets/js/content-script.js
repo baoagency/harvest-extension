@@ -1,11 +1,11 @@
 function removeNewLines (string) {
-  if(!string) return
+  if(!string) return ''
 
   return string.replace(/(\r\n|\n|\r)/gm, '')?.trim()
 }
 
 function handleise (string) {
-  if(!string) return
+  if(!string) return ''
 
   return string?.toLowerCase()?.replace(/[^a-z0-9]+/g, '-')?.replace(/-$/, '')?.replace(/^-/, '')?.trim()
 }
